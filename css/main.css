@@ -567,6 +567,8 @@ body * {
   background: #131218;
   border: 1px solid #CAFC01;
   border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
 }
 .plan__img_abs {
   position: absolute;
