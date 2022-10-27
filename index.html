@@ -14,6 +14,26 @@
   <title>Гарант</title>
 </head>
 <body>
+  <!-- Модальное окно -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Заголовок модального окна</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+      </div>
+    </div>
+  </div>
+</div>
   <header class="header">
     <div class="container">
       <div class="row h-100">
@@ -26,11 +46,11 @@
               <li><a href="#">Для кого</a></li>
               <li><a href="#">Помощь</a></li>
               <li><a href="#">Сертификаты</a></li>
-              <li><a href="#">Отзывы</a></li>
+              <li><a href="#feedback">Отзывы</a></li>
             </ul>
             <div class="header__menu_input">
               <a href="#">Войти</a>
-              <a href="#">Создать аккаунт</a>
+              <a href="#" data-toggle="modal" data-target="#exampleModal">Создать аккаунт</a>
             </div>
           </div>
         </div>
@@ -44,7 +64,7 @@
         <div class="col-6">
           <h1>Гарант-сервис для <br> проведения безопасных <br> сделок в <span class="spanline">Интернете</span></h1>
           <div class="garant__create">
-            <a href="#" class="create-btn">Создать аккаунт</a>
+            <a href="#" class="create-btn" data-toggle="modal" data-target="#exampleModal">Создать аккаунт</a>
             <div class="garant__how">
               <a href="#" class="garant__how_btn"><span></span></a>
               <p class="garant__how_text">Как это работает?</p>
@@ -112,12 +132,12 @@
         <div class="col-6">
           <div class="security__info">
             <div class="security__info-wrap">
-              <h2 class="security__info_title">Что такое безопасная сделка?</h2>
+              <h2 class="security__info_title">Что такое <span class="spanline">безопасная</span> сделка?</h2>
               <p class="security__info_subtitle">Безопасная сделка – сервис защиты покупателя и продавца в интернете.</p>
               <p class="security__info_text">
                 Безопасная сделка гарантирует 100% предоплату, которая хранится на счете гаранта melby.ru, пока продавец не выполнит все свои обязательства, а покупатель не получит товар или услугу. Также безопасная сделка обеспечивает сохранность средств покупателя: если продавец нарушает условия сделки, гарант-сервис melby.ru возвращает средства или предлагает покупателю скидку.
               </p>
-              <a href="#" class="security__info_btn create-btn">Создать аккаунт</a>
+              <a href="#" class="security__info_btn create-btn" data-toggle="modal" data-target="#exampleModal">Создать аккаунт</a>
             </div>
           </div>
         </div>
@@ -342,7 +362,7 @@
     </div>
   </section>
 
-  <section class="feedback">
+  <section class="feedback" id="feedback">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -615,7 +635,7 @@
 
       <div class="row">
         <div class="col-12 d-flex justify-content-center">
-          <a href="#" class="why__btn create-btn">Создать аккаунт</a>
+          <a href="#" class="why__btn create-btn" data-toggle="modal" data-target="#exampleModal">Создать аккаунт</a>
         </div>
       </div>
     </div>
@@ -626,25 +646,36 @@
       <div class="row">
         <div class="col-3">
           <div class="footer__logo">
-            <img src="./img/logo.svg" alt="">
+            <a href="./">
+              <img src="./img/logo.svg" alt="">
+            </a>
           </div>
         </div>
         <div class="col-6">
           <div class="footer__menu">
             <ul>
-              <li>Для кого</li>
-              <li>Помощь</li>
-              <li>Сертификаты</li>
-              <li>Отзывы</li>
+              <li><a href="#">Для кого</a></li>
+              <li><a href="#">Помощь</a></li>
+              <li><a href="#">Сертификаты</a></li>
+              <li><a href="#feedback">Отзывы</a></li>
             </ul>
           </div>
         </div>
         <div class="col-3">
           <div class="footer__links">
-            <img src="./img/webmoney.svg" alt="webmoney">
-            <img src="./img/dss.svg" alt="dss">
-            <img src="./img/ssl.svg" alt="ssl">
+            <a href="#">
+              <img src="./img/webmoney.svg" alt="webmoney">
+            </a>
+            <a href="#">
+              <img src="./img/dss.svg" alt="dss">
+            </a>
+            <a href="#">
+              <img src="./img/ssl.svg" alt="ssl">
+            </a>
           </div>
+        </div>
+        <div class="col-12">
+          <p class="footer__melby">©2020-2022 Гарант сервис melby.ru</p>
         </div>
       </div>
     </div>
