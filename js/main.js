@@ -37,4 +37,17 @@ $(document).ready(function(){
     variableWidth: true,
     adaptiveHeight: true,
   })
+
+  // pass hide/show
+  function showPassword(input) {
+    $('body').on('click', '.password a', function(){
+      const $input = $(this).parent().children(input);
+      const type = $input.attr('type');
+      const isPass = type == "password";
+      $(this).toggleClass('view', isPass);
+      isPass ? $input.attr('type', 'text') : $input.attr('type', 'password');
+      return false;
+   });
+  }
+  showPassword('.input-password');
 })

@@ -1,5 +1,195 @@
 @import "null";
 
+// modal
+.modal-dialog {
+  @media (min-width: 400px) {
+    max-width: 390px;
+  }
+}
+
+.modal-content {
+  background: #131218;
+  border-radius: 16px;
+}
+
+.modal-header {
+  padding: 24px 30px;
+  border-bottom: none;
+  align-items: center;
+
+  .modal-title {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 40px;
+    letter-spacing: 0.012em;
+  }
+}
+
+.close {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+}
+
+.modal-body {
+  padding: 0 36px;
+
+  input {
+    width: 100%;
+    background: #2B2B2B;
+    border-radius: 8px;
+    padding: 13px 12px;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid transparent;
+    transition: all .3s ease 0s;
+    margin-bottom: 16px;
+
+    &:focus {
+      border: 1px solid #CAFC01;
+    }
+  }
+
+  .login {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .input-password {
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  form {
+    position: relative;
+  }
+
+  .password {
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+
+  .password-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../img/no-view.svg") 0 0 / 20px no-repeat;
+  }
+  .password-control.view {
+    background: url("../img/view.svg") 0 0 / 20px no-repeat;
+  }
+
+  .form__btn {
+    margin: 24px 0 0;
+    width: 100%;
+    padding: 16px 30px;
+    text-align: center;
+    background: #CAFC01;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: 0.012em;
+    color: #000000;
+    transition: all .2s ease 0s;
+
+    &:hover {
+      box-shadow: 0px 0px 4px 1px #CAFC01;
+      color: #000000;
+    }
+  }
+}
+
+.modal-footer {
+  flex-direction: column;
+  align-items: start;
+  border-top: none;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 24px 36px;
+
+  .pass-not {
+    color: #CAFC01;
+    transition: all .2s ease 0s;
+
+    &:hover {
+      text-shadow: 0px 0px 2px #CAFC01;
+    }
+  }
+
+  .checkbox {
+    .pass-not {
+      opacity: 0.7;
+    }
+
+    .custom-checkbox {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    /* для элемента label, связанного с .custom-checkbox */
+    .custom-checkbox+label {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    /* создание в label псевдоэлемента before со следующими стилями */
+    .custom-checkbox+label::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      border: 1px solid #CAFC01;
+      border-radius: 0.25em;
+      margin-right: 0.5em;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 110%;
+    }
+
+    /* стили для активного чекбокса (при нажатии на него) */
+    .custom-checkbox:not(:disabled):active+label::before {
+      background-color: #CAFC01;
+    }
+
+    /* стили для чекбокса, находящегося в состоянии checked */
+    .custom-checkbox:checked+label::before {
+      border-color: #CAFC01;
+      background-color: #000;
+      background-image: url("../img/check_box.svg");
+    }
+
+    /* стили для чекбокса, находящегося в состоянии disabled */
+    .custom-checkbox:disabled+label::before {
+      background-color: #CAFC01;
+    }
+
+    body {
+      padding: 20px 50px;
+    }
+
+    .checkbox {
+      margin-bottom: 1em;
+    }
+  }
+
+  .pass-reg {
+    font-weight: 500;
+  }
+
+
+}
+
+// html
 html {
   scroll-behavior: smooth;
 }
@@ -972,6 +1162,15 @@ body * {
     display: flex;
     justify-content: end;
     align-items: center;
+
+    a {
+      border-radius: 8px;
+      transition: all .2s ease 0s;
+    }
+
+    a:hover {
+      box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.2);
+    }
 
     a:not(:last-child) {
       margin-right: 8px;
